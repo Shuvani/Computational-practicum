@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <AnchorPane layoutX="12.0" layoutY="10.0" prefHeight="234.0" prefWidth="312.0" style="-fx-background-color: #bef3e6; -fx-border-color: #000000; -fx-border-radius: 5;" />
+      <Label fx:id="Label_change_x0" layoutX="21.0" layoutY="20.0" text="Change x0 (initial conditions)" />
+      <Label fx:id="Label_change_y0" layoutX="21.0" layoutY="68.0" text="Change y0 (initial conditions)" />
+      <Label fx:id="Label_change_n" layoutX="21.0" layoutY="118.0" text="Change n (number of grid steps)" />
+      <Label fx:id="Label_change_X" layoutX="21.0" layoutY="168.0" prefHeight="17.0" prefWidth="181.0" text="Change X (right sight of interval)" />
+      <JFXTextField fx:id="Change_x0" alignment="TOP_CENTER" focusColor="#a840a3" layoutX="226.0" layoutY="16.0" prefHeight="25.0" prefWidth="89.0" promptText="2" unFocusColor="#253ba8" />
+      <LineChart fx:id="Graphs_of_solutions" layoutX="642.0" layoutY="13.0" prefHeight="394.0" prefWidth="593.0" title="Graphs of solutions">
+         <xAxis>
+            <NumberAxis label="x" side="BOTTOM" fx:id="x" />
+         </xAxis>
+         <yAxis>
+            <NumberAxis fx:id="y" label="y" side="LEFT" />
+         </yAxis>
+      </LineChart>
+      <Button fx:id="Button_exact_solution" layoutX="366.0" layoutY="9.0" mnemonicParsing="false" onAction="#button_e_s" prefHeight="32.0" prefWidth="230.0" style="-fx-background-color: #a5e1f7; -fx-border-radius: 5; -fx-border-color: #000000;" text="Exact solution" />
+      <JFXTextField fx:id="Change_y0" alignment="TOP_CENTER" focusColor="#a840a3" layoutX="226.0" layoutY="61.0" prefHeight="25.0" prefWidth="89.0" promptText="0" unFocusColor="#253ba8" />
+      <JFXTextField fx:id="Change_n" alignment="TOP_CENTER" focusColor="#a840a3" layoutX="226.0" layoutY="110.0" prefHeight="25.0" prefWidth="89.0" promptText="10" unFocusColor="#253ba8" />
+      <JFXTextField fx:id="Change_X" alignment="TOP_CENTER" focusColor="#a840a3" layoutX="226.0" layoutY="160.0" prefHeight="25.0" prefWidth="89.0" promptText="12" unFocusColor="#253ba8" />
+      <Button fx:id="Confirm_changes" layoutX="45.0" layoutY="203.0" mnemonicParsing="false" onAction="#button_c_c" prefHeight="32.0" prefWidth="230.0" style="-fx-background-color: #f3ceb0; -fx-border-color: #232222; -fx-border-radius: 5;" text="Confirm changes" textFill="#232222" />
+      <Button fx:id="Button_eulers_method" layoutX="367.0" layoutY="55.0" mnemonicParsing="false" onAction="#button_e_m" prefHeight="32.0" prefWidth="230.0" style="-fx-background-color: #a5e1f7; -fx-border-color: #000000; -fx-border-radius: 5;" text="Euler's method" />
+      <Button fx:id="Button_improved_euler_method" layoutX="367.0" layoutY="102.0" mnemonicParsing="false" onAction="#button_i_e_m" prefHeight="32.0" prefWidth="230.0" style="-fx-background-color: #a5e1f7; -fx-border-color: #000000; -fx-border-radius: 5;" text="Improved_Euler's_method" />
+      <Button fx:id="Button_Runge_Kutta_method" layoutX="367.0" layoutY="150.0" mnemonicParsing="false" onAction="#button_r_k_m" prefHeight="32.0" prefWidth="230.0" style="-fx-background-color: #a5e1f7; -fx-border-radius: 5; -fx-border-color: #000000;" text="Runge_Kutta_method" />
+      <Button fx:id="button_clear_all" layoutX="367.0" layoutY="197.0" mnemonicParsing="false" onAction="#button_clear_all" prefHeight="32.0" prefWidth="230.0" style="-fx-background-color: #a5e1f7; -fx-border-color: #000000; -fx-border-radius: 5;" text="Clear all" />
+      <LineChart fx:id="Graphs_of_local_errors" layoutX="615.0" layoutY="398.0" prefHeight="246.0" prefWidth="616.0" title="Graphs of local errors">
+        <xAxis>
+          <NumberAxis fx:id="l_x" label="x" side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="l_y" label="y" prefWidth="65.0" side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <Button fx:id="Button_euler_local" layoutX="367.0" layoutY="249.0" mnemonicParsing="false" onAction="#button_e_l_e" prefHeight="32.0" prefWidth="230.0" style="-fx-background-color: #e0c4e8; -fx-border-color: #000000; -fx-border-radius: 5;" text="Euler's local error" />
+      <Button fx:id="Button_improved_local" layoutX="367.0" layoutY="296.0" mnemonicParsing="false" onAction="#button_i_e_l_e" prefHeight="32.0" prefWidth="230.0" style="-fx-background-color: #e0c4e8; -fx-border-color: #000000; -fx-border-radius: 5;" text="Improved Euler's local error" />
+      <Button fx:id="Button_rungekutta_local" layoutX="367.0" layoutY="344.0" mnemonicParsing="false" onAction="#button_r_k_l_e" prefHeight="32.0" prefWidth="230.0" style="-fx-background-color: #e0c4e8; -fx-border-color: #000000; -fx-border-radius: 5;" text="Runge-Kutta local error" />
+      <LineChart fx:id="Graphs_of_global_errors" layoutX="24.0" layoutY="427.0" prefHeight="220.0" prefWidth="602.0" title="Graphs of global errors">
+        <xAxis>
+          <NumberAxis fx:id="g_x" label="x" side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="g_y" label="y" side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <Button layoutX="367.0" layoutY="388.0" mnemonicParsing="false" onAction="#button_clear_all_local" prefHeight="32.0" prefWidth="230.0" style="-fx-background-color: #e0c4e8; -fx-border-color: #000000; -fx-border-radius: 5;" text="Clear all" />
+      <Button fx:id="Button_euler_global" layoutX="45.0" layoutY="250.0" mnemonicParsing="false" onAction="#button_e_g_e" prefHeight="32.0" prefWidth="230.0" style="-fx-background-color: #fcf5ab; -fx-border-color: #1a1919; -fx-border-radius: 5;" text="Euler's global errors" />
+      <Button fx:id="Button_improved_global" layoutX="45.0" layoutY="297.0" mnemonicParsing="false" onAction="#button_i_e_g_e" prefHeight="32.0" prefWidth="230.0" style="-fx-background-color: #fcf5ab; -fx-border-radius: 5; -fx-border-color: #1a1919;" text="Improved Euler's global errors" />
+      <Button fx:id="Button_rungekutta_global" layoutX="45.0" layoutY="345.0" mnemonicParsing="false" onAction="#button_r_k_g_e" prefHeight="32.0" prefWidth="230.0" style="-fx-background-color: #fcf5ab; -fx-border-color: #1a1919; -fx-border-radius: 5;" text="Runge-Kutta global error" />
+      <Button layoutX="46.0" layoutY="391.0" mnemonicParsing="false" onAction="#button_clear_all_global" prefHeight="32.0" prefWidth="230.0" style="-fx-background-color: #fcf5ab; -fx-border-radius: 5; -fx-border-color: #1a1919;" text="Clear all" />
+   </children>
+</AnchorPane>
